@@ -1,0 +1,24 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    color: #FFFFFF;
+}
+
+#wrapper {
+    width: 45vw;
+    margin: auto;
+    color: grey;
+}
+
+#main-container {
+    width: 100%;
+    height: auto;
+}
