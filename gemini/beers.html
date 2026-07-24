@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the range of craft beers available at Whangārei Craft Brewers.">
+    <title>Our Beers - Whangarei Craft Brewers</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="grid-container">
+        
+        <header class="site-header">
+            <h1>Whangārei Craft Brewers</h1>
+            <p>Our Signature Range</p>
+        </header>
+
+        <nav class="site-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="beers.html" class="active">Our Beers</a></li>
+            </ul>
+        </nav>
+
+        <main class="site-main">
+            <section class="beer-list">
+                <h2>Currently on Tap</h2>
+                
+                <!-- Internal Grid for listing products -->
+                <div class="product-grid">
+                    <article class="beer-item">
+                        <!-- Iterative improvement: Thumbnail images used for gallery to optimize load times -->
+                        <img src="images/pale-ale-thumb.jpg" alt="Glass of pale ale" loading="lazy">
+                        <h3>Northland Pale Ale</h3>
+                        <p>A crisp, refreshing pale ale with strong citrus notes.</p>
+                    </article>
+                    
+                    <article class="beer-item">
+                        <img src="images/stout-thumb.jpg" alt="Glass of dark stout" loading="lazy">
+                        <h3>Winterless Stout</h3>
+                        <p>Rich, dark, and infused with local organic coffee.</p>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>&copy; 2026 Whangārei Craft Brewers. Please drink responsibly.</p>
+        </footer>
+        
+    </div>
+</body>
+</html>

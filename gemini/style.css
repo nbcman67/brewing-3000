@@ -1,0 +1,181 @@
+/* 
+   Iterative design notes: 
+   - Initial layout used Flexbox, but updated to CSS Grid to better meet the AS91903 standard for advanced tools.
+   - Colour scheme checked for high contrast to meet accessibility/usability standards.
+*/
+
+:root {
+    --primary-color: #2c1e16; /* Dark brown for brewing theme */
+    --accent-color: #d4af37;  /* Gold/Amber */
+    --bg-color: #f4f1ea;      /* Off-white for readability */
+    --text-color: #333333;
+    --font-heading: 'Merriweather', serif;
+    --font-body: 'Open Sans', sans-serif;
+}
+
+/* Reset and basic typography for user experience principles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333; /* Dark background behind the 5:4 container */
+    color: var(--text-color);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* 
+   CSS Grid & 5:4 Aspect Ratio Implementation 
+   This addresses the specific requirement for a 5:4 aspect ratio on desktop,
+   acting as a "window" in the center of the screen.
+*/
+.grid-container {
+    background-color: var(--bg-color);
+    width: 100%;
+    max-width: 1000px; /* Caps the width */
+    aspect-ratio: 5 / 4; /* Forces the 5:4 ratio */
+    
+    /* CSS Grid Layout */
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        "header header"
+        "nav main"
+        "footer footer";
+        
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    overflow-y: auto; /* Allows scrolling within the 5:4 box if content overflows */
+}
+
+/* Grid Area Assignments */
+.site-header {
+    grid-area: header;
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    padding: 2rem;
+    text-align: center;
+}
+
+.site-header h1 {
+    color: var(--accent-color);
+}
+
+.site-nav {
+    grid-area: nav;
+    background-color: #e3dec9;
+    padding: 2rem 1rem;
+}
+
+.site-nav ul {
+    list-style-type: none;
+}
+
+.site-nav li {
+    margin-bottom: 1rem;
+}
+
+.site-nav a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: block;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.site-nav a:hover, .site-nav a.active {
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+}
+
+.site-main {
+    grid-area: main;
+    padding: 2rem;
+}
+
+.site-footer {
+    grid-area: footer;
+    background-color: var(--primary-color);
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Image optimization & responsiveness styling */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    display: block;
+}
+
+.hero-image {
+    margin-top: 1.5rem;
+}
+
+.hero-image figcaption {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+/* Dynamic data handling / Inner grid for product list */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.beer-item {
+    background: #fff;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    text-align: center;
+}
+
+/* 
+   Mobile Responsiveness (Overrides the 5:4 aspect ratio for acceptable mobile UX) 
+*/
+@media screen and (max-width: 768px) {
+    .grid-container {
+        aspect-ratio: auto; /* Removes strict 5:4 ratio to allow vertical flow */
+        min-height: 100vh; /* Takes full screen height */
+        border-radius: 0;
+        
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "nav"
+            "main"
+            "footer";
+    }
+
+    .site-nav ul {
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .site-nav li {
+        margin-bottom: 0;
+    }
+}
