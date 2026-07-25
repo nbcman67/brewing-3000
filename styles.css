@@ -14,7 +14,8 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #4b4b4b;
+    min-height: 100vh;
+    background-color: #9c9c9c;
 }
 
 #wrapper {
@@ -50,6 +51,20 @@ body {
     display: block;
 }
 
+img {
+    width: 100%;
+}
+
+figure {
+    margin: 16px;
+}
+
+figcaption {
+    margin-top: 16px;
+    font-style: italic;
+    text-align: center;
+}
+
 nav {
     grid-area: nav;
     background-color: var(--bg-colour);
@@ -73,6 +88,34 @@ nav a {
     display: block;
 }
 
+a {
+    color: #508ddb;
+    transition: 0.2s;
+    text-decoration: none;
+}
+
+a:hover {
+    color: purple;
+    background-color: #333;
+    text-decoration: underline;
+}
+
+main {
+    grid-area: main;
+    width: 100%;
+    padding: 32px;
+}
+
+footer {
+    grid-area: footer;
+    text-align: center;
+    width: 100%;
+    padding: 32px;
+    background-color: var(--bg-colour);
+    border-top: var(--border);
+    border-bottom: var(--border);
+}
+
 @media screen and (max-width: 768px) {
     #main-container {
         min-height: 100vh;
@@ -89,5 +132,13 @@ nav a {
 
     nav a {
         padding: 12px 0px;
+    }
+
+    main {
+        padding: 16px;
+    }
+
+    footer {
+        padding: 16px;
     }
 }
