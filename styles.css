@@ -18,6 +18,10 @@ body {
     background: url(img/texture.png) repeat;
 }
 
+h1, h2, h3 {
+    margin-top: 0;
+}
+
 #wrapper {
     width: 100%;
     max-width: 800px;
@@ -84,7 +88,7 @@ nav ul {
 nav a {
     text-decoration: none;
     text-align: center;
-    padding: 24px 40px;
+    padding: 18px 40px;
     display: block;
 }
 
