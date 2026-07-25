@@ -5,6 +5,79 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
         <link rel="stylesheet" href="../styles.css">
+        <script>
+		    /* Function for converting the Hydrometer values */
+		    function Hydrometer()
+		    {
+		    	var inputValue1 = document.getElementById("user_value");
+		    	const inputValue = inputValue1.value;
+
+		    	/* get the value from which radio button is checked */
+		    	var radios = document.getElementsByName('hydrometer_type');
+		    	for (var i = 0, length = radios.length; i < length; i++) 
+		    	{
+		    		if (radios[i].checked) 
+		    		{
+		    			var input_hydro_type = (radios[i].value);
+		    			break;
+		    		}
+		    	}
+		    	/* Depending on which input option, calculate the conversions  */
+		    	if (input_hydro_type == "bricks"){
+		    		brix_output = inputValue;
+		    		percent_output = inputValue/0.55;
+		    		sg_output = (inputValue * 0.004 ) + 1;
+
+		    	} else if (input_hydro_type == "percent"){
+		    		brix_output = inputValue*0.55;
+		    		percent_output = inputValue;
+		    		sg_output = (inputValue / 131.25 ) + 1;
+
+		    	} else if (input_hydro_type == "sg"){
+		    		brix_output = (inputValue - 1 ) / 0.004;
+		    		percent_output = (inputValue - 1 ) * 131.25;
+		    		sg_output = inputValue;
+		    	}
+
+                if (isNaN(brix_output) || isNaN(percent_output) || isNaN(sg_output) || input_hydro_type === 0) {
+					document.getElementById("output1").innerHTML = 'Please enter valid numeric values';
+					return;
+				}
+		    	/*  Display the results  */
+		    	/*.toFixed(2)   (for decimal place)*/
+		    	document.getElementById("output1").innerHTML = brix_output+'bx';
+		    	document.getElementById("output2").innerHTML = percent_output+'%';
+		    	document.getElementById("output3").innerHTML = sg_output+' SG';
+		    }
+
+			/* Function for approximating the percentage of your mixer */
+			function Mixer(){
+
+				var abv1 = document.getElementById("abv");
+				const abv = abv1.value;
+
+				var qty1 = document.getElementById("qty");
+				const qty = qty1.value;
+
+				var glass1 = document.getElementById("glass");
+				const glass = glass1.value;
+
+				const abvNum = parseFloat(abv);
+				const qtyNum = parseFloat(qty);
+				const glassNum = parseFloat(glass);
+
+				if (isNaN(abvNum) || isNaN(qtyNum) || isNaN(glassNum) || glassNum === 0) {
+					document.getElementById("output").innerHTML = 'Please enter valid numeric values';
+					return;
+				}
+
+				const result = (abvNum * qtyNum) / glassNum;
+				const answer = result.toFixed(2);
+
+				document.getElementById("output").innerHTML = 'Your drink will be ' + answer + '%';
+
+			}
+	    </script>
     </head>
     <body>
         <div id="wrapper">
@@ -21,15 +94,67 @@
                     </ul>
                 </nav>
                 <main>
-                    <h2>Welcome.</h2>
-                    <section>
-                        <p>This is the main website for the <b>Supreme Craft Brewing Company</b>, part of the burgeoning Home Brewing movement.</p>
-                        <p>Here you can find information about us, calculators to make your own brews to your measurements, and recipes for food items involving alcohol.</p>
-                        <figure>
-                            <img src="img/propaganda.png" loading="lazy" alt="Image telling you to drink alcohol">
-                            <figcaption>Listen to him.</figcaption>
-                        </figure>
-                    </section>
+                    <form onsubmit="return false"> <!-- <<-- This will stop it redirecting the page, but able to run the code-->
+			            <div>
+			            	<div>
+			            		<h2>Hydrometer</h2> Calculations to change between Bricks, Spercific Gravity and Potential percentage. 
+			            		select the value you have, enter your value and the results will display.
+			            	</div>
+			            	<div>
+			            		<input type="radio" name="hydrometer_type" id="bricks" value="bricks"><br>
+			            		<label for="bricks">Bricks</label><br>
+			            	</div>
+			            	<div>
+			            		<input type="radio" name="hydrometer_type" id="percent" value="percent" checked><br>
+			            		<label for="percent">(%) Potential Percentage</label><br>
+			            	</div>
+			            	<div>
+			            		<input type="radio" name="hydrometer_type" id="sg" value="sg"><br>
+			            		<label for="sg">(SG) Spercific Gravity</label> 
+			            	</div>
+			            	<div>
+			            		<input type="text" id="user_value" name="user_value" value="Enter Value">
+			            		<input  onclick="Hydrometer()" type="submit" id="btn1" value="calculate">
+			            	</div>
+			            	<div>
+			            		<p id='output1'></p>
+			            	</div>
+			            	<div>
+			            		<p id='output2'></p>
+			            	</div>
+			            	<div>
+			            		<p id='output3'></p>
+			            	</div>
+			            </div>
+		            </form>
+
+		            <!----   What Percentage is my Mixer   ---->
+		            <form onsubmit="return false"> <!-- <<-- This will stop it redirecting the page, but able to run the code-->
+		            	<div>
+		            		<div>
+		            			<h2>What Percentage is my Mixer</h2> Calculations to show what percentage your drink will be after adding spirit.<br>
+		            			select the percentage spirit, amount added and the cup size.<br> Please not this will not be 100% correct but will give a batter Idea.
+		            		</div>
+		            		<div>
+		            			<label for="abv">Spirit Percentage (ABV)</label><br>
+		            			<input type="text" id="abv" name="abv" value="Enter Value">
+		            		</div>
+		            		<div>
+		            			<label for="qty">Spirit ammount (mls)</label><br>
+		            			<input type="text" id="qty" name="qty" value="Enter Value">
+		            		</div>
+		            		<div>
+		            			<label for="glass">Drink / Glass size (mls)</label><br>
+		            			<input type="text" id="glass" name="glass" value="Enter Value">
+		            		</div>
+		            		<div>
+		            			<p id='output'> </p>
+		            		</div>
+		            		<div>
+		            			<input onclick="Mixer()" type="submit" id="btn1" value="calculate">
+		            		</div>
+		            	</div>
+		            </form>
                 </main>
                 <footer>
                     <p>&copy;2026 Supreme Craft Brewing Co. Ltd, All rights reserved.</p>
