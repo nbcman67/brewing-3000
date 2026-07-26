@@ -18,7 +18,7 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    background: url(img/texture.png) repeat;
+    background: url(../img/texture.png) repeat;
 }
 
 h1, h2, h3 {
@@ -182,14 +182,14 @@ summary:hover {
     }
 
     nav a {
-        padding: 12px 0px;
+        padding: 0.8rem 0;
     }
 
     main {
-        padding: 16px;
+        padding: 1rem;
     }
 
     footer {
-        padding: 16px;
+        padding: 1rem;
     }
 }
