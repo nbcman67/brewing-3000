@@ -45,9 +45,9 @@
 				}
 		    	/*  Display the results  */
 		    	/*.toFixed(2)   (for decimal place)*/
-		    	document.getElementById("output1").innerHTML = brix_output+'bx';
-		    	document.getElementById("output2").innerHTML = percent_output+'%';
-		    	document.getElementById("output3").innerHTML = sg_output+' SG';
+		    	document.getElementById("output1").innerHTML = Number(brix_output).toFixed(2)+'bx';
+		    	document.getElementById("output2").innerHTML = Number(percent_output).toFixed(2)+'%';
+		    	document.getElementById("output3").innerHTML = Number(sg_output).toFixed(2)+' SG';
 		    }
 
 			/* Function for approximating the percentage of your mixer */
@@ -94,8 +94,25 @@
                     </ul>
                 </nav>
                 <main>
-			        <h2>Hydrometer</h2> Calculations to change between Bricks, Spercific Gravity and Potential percentage. 
-			        select the value you have, enter your value and the results will display.
+			        <h2>S.C.B.C&trade; Patented Super Duper Hydrometer 3000</h2>
+                    <p>Use this to calculate yer brews. A glossary for dummies is below.</p>
+                    <details>
+                        <summary>Glossary for Dummies</summary>
+                        <ul>
+                            <li>
+                                Bricks<br><br>
+                                Uses sucrose level to calculate ABV. Measured at a 1/100 scale, as in 1 gram of sucrose per 100 grams of alcohol solution.
+                            </li><br>
+                            <li>
+                                Potential ABV%<br><br>
+                                Uses sugar amount to determine potential alcohol amount when all sugar is used up during brewing process. Calculated via initial reading - finished reading, e.g 12% Pot. ABV brewed down to 1% Pot. ABV would net you a 11% ABV.
+                            </li><br>
+                            <li>
+                                Specific Gravity<br><br>
+                                Uses the density of distilled water to calculate ABV. Values below 1 mean higher alcohol content/less dissolved sugar, while values above 1 mean lower alcohol content/more dissolved sugar.
+                            </li>
+                        </ul>
+                    </details>
                     <form onsubmit="return false"> <!-- <<-- This will stop it redirecting the page, but able to run the code-->
 			            <div class="calc">
 			            	<div>
@@ -126,10 +143,9 @@
 			            </div>
 		            </form>
 
-		            <!----   What Percentage is my Mixer   ---->
-		            <form onsubmit="return false"> <!-- <<-- This will stop it redirecting the page, but able to run the code-->
-                        <h2>What Percentage is my Mixer</h2> Calculations to show what percentage your drink will be after adding spirit.<br>
-		            	select the percentage spirit, amount added and the cup size.<br> Please not this will not be 100% correct but will give a batter Idea.
+                    <h2>S.C.B.C&trade; Patented Super Duper Mixer Calculator 3001</h2>
+                    <p>For mixing mixers.<br><br>Shows the alcohol content of your mixer after adding spirits to it. Input the Spirit's ABV, amount and how big your glass is.</p>
+		            <form onsubmit="return false">
 		            	<div class="calc">
 		            		<div>
 		            			<label for="abv">Spirit %<br>(ABV)</label><br>

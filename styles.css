@@ -60,11 +60,11 @@ img {
 }
 
 figure {
-    margin: 16px;
+    margin: 1rem;
 }
 
 figcaption {
-    margin-top: 16px;
+    margin-top: 1rem;
     font-style: italic;
     text-align: center;
 }
@@ -112,20 +112,21 @@ a:hover {
 main {
     grid-area: main;
     width: 100%;
-    padding: 32px;
+    padding: 2rem;
 }
 
 footer {
     grid-area: footer;
     text-align: center;
     width: 100%;
-    padding: 32px;
+    padding: 2rem;
     background-color: var(--bg-colour);
     border-top: var(--border);
     border-bottom: var(--border);
 }
 
 .calc {
+    margin-top: 1rem;
     display: grid;
     justify-content: center;
     text-align: center;
@@ -134,7 +135,7 @@ footer {
 }
 
 .hydrospan {
-    margin-top: 16px;
+    margin-top: 1rem;
     grid-column: span 3;
 }
 
@@ -143,7 +144,16 @@ footer {
 }
 
 input {
-    width: 80px;
+    width: 5rem;
+}
+
+summary {
+    transition: 0.2s;
+}
+
+summary:hover {
+    color: purple;
+    text-decoration: underline;
 }
 
 @media screen and (max-width: 768px) {
