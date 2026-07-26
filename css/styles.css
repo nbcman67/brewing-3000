@@ -1,3 +1,5 @@
+
+/* Variables */
 :root {
     --main-font: Arial, Helvetica, sans-serif;
     --heading-font: Georgia, 'Times New Roman', Times, serif;
@@ -18,13 +20,15 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    background: url(img/texture.png) repeat;
+    background: url(../img/texture.png) repeat;
 }
 
 h1, h2, h3 {
     margin-top: 0;
     font-family: var(--heading-font);
 }
+
+/* Main container code */
 
 #wrapper {
     width: 100%;
@@ -48,6 +52,8 @@ h1, h2, h3 {
     overflow-y: auto;
 }
 
+/* Separated header */
+
 #header {
     grid-area: header;
     max-height: 100%;
@@ -63,6 +69,8 @@ img {
     width: 100%;
 }
 
+/* Image caption config */
+
 figure {
     margin: 1rem;
     margin-bottom: 0;
@@ -73,6 +81,8 @@ figcaption {
     font-style: italic;
     text-align: center;
 }
+
+/* Navbar config, changes on mobile */
 
 nav {
     grid-area: nav;
@@ -110,6 +120,8 @@ nav a:hover {
     background-color: var(--bg-dark);
 }
 
+/* Main meat and bones of the site */
+
 main {
     grid-area: main;
     width: 100%;
@@ -126,6 +138,8 @@ footer {
     border-top: var(--border);
     border-bottom: var(--border);
 }
+
+/* Calculator grid */
 
 .calc {
     margin-top: 1rem;
@@ -145,6 +159,8 @@ footer {
     grid-column: span 3;
 }
 
+/* Form input styling */
+
 input[type=text] {
     width: 5rem;
     background-color: var(--bg-colour);
@@ -160,12 +176,16 @@ summary:hover {
     text-decoration: underline;
 }
 
+/* Scrollable article part for compactness */
+
 #articlesegment {
     border: var(--border);
     padding: 0.5rem;
     max-height: 60vh;
     overflow-y: scroll;
 }
+
+/* Mobile layout */
 
 @media screen and (max-width: 768px) {
     #main-container {
@@ -182,14 +202,14 @@ summary:hover {
     }
 
     nav a {
-        padding: 12px 0px;
+        padding: 0.8rem 0;
     }
 
     main {
-        padding: 16px;
+        padding: 1rem;
     }
 
     footer {
-        padding: 16px;
+        padding: 1rem;
     }
 }
