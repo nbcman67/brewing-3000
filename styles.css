@@ -95,15 +95,11 @@ nav a {
     text-align: center;
     padding: 1rem 40px;
     display: block;
-}
-
-a {
     color: var(--text-colour);
     transition: 0.2s;
-    text-decoration: none;
 }
 
-a:hover {
+nav a:hover {
     color: purple;
     background-color: var(--bg-dark);
     text-decoration: underline;
@@ -162,6 +158,13 @@ summary {
 summary:hover {
     color: purple;
     text-decoration: underline;
+}
+
+#articlesegment {
+    border: var(--border);
+    padding: 0.5rem;
+    max-height: 60vh;
+    overflow-y: scroll;
 }
 
 @media screen and (max-width: 768px) {
