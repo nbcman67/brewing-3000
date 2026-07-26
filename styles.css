@@ -143,8 +143,10 @@ footer {
     grid-column: span 3;
 }
 
-input {
+input[type=text] {
     width: 5rem;
+    background-color: var(--bg-colour);
+    color: white;
 }
 
 summary {
