@@ -94,79 +94,84 @@
                     </ul>
                 </nav>
                 <main>
-			        <h2>S.C.B.C&trade; Patented Super Duper Hydrometer 3000</h2>
-                    <p>Use this to calculate yer brews. Both calculators are rounded to 2 decimal places. A glossary for dummies is below.</p>
-                    <details>
-                        <summary>Glossary for Dummies</summary>
-                        <ul>
-                            <li>
-                                Bricks<br><br>
-                                Uses sucrose level to calculate ABV. Measured at a 1/100 scale, as in 1 gram of sucrose per 100 grams of alcohol solution.
-                            </li><br>
-                            <li>
-                                Potential ABV%<br><br>
-                                Uses sugar amount to determine potential alcohol amount when all sugar is used up during brewing process. Calculated via initial reading - finished reading, e.g 12% Pot. ABV brewed down to 1% Pot. ABV would net you a 11% ABV.
-                            </li><br>
-                            <li>
-                                Specific Gravity<br><br>
-                                Uses the density of distilled water to calculate ABV. Values below 1 mean higher alcohol content/less dissolved sugar, while values above 1 mean lower alcohol content/more dissolved sugar.
-                            </li>
-                        </ul>
-                    </details>
-                    <form onsubmit="return false"> <!-- <<-- This will stop it redirecting the page, but able to run the code-->
-			            <div class="calc">
-			            	<div>
-			            		<input type="radio" name="hydrometer_type" id="bricks" value="bricks"><br>
-			            		<label for="bricks">Bricks</label><br>
-			            	</div>
-			            	<div>
-			            		<input type="radio" name="hydrometer_type" id="percent" value="percent" checked><br>
-			            		<label for="percent">Potential ABV%</label><br>
-			            	</div>
-			            	<div>
-			            		<input type="radio" name="hydrometer_type" id="sg" value="sg"><br>
-			            		<label for="sg">Specific Gravity</label> 
-			            	</div>
-			            	<div class="hydrospan">
-			            		<input type="text" id="user_value" name="user_value" value="">
-			            		<input onclick="Hydrometer()" type="submit" id="btn1" value="calculate">
-			            	</div>
-			            	<div>
-			            		<p id='output1'></p>
-			            	</div>
-			            	<div>
-			            		<p id='output2'></p>
-			            	</div>
-			            	<div>
-			            		<p id='output3'></p>
-			            	</div>
-			            </div>
-		            </form>
-
-                    <h2>S.C.B.C&trade; Patented Super Duper Mixer Calculator 3001</h2>
-                    <p>For mixing mixers.<br><br>Shows the alcohol content of your mixer after adding spirits to it. Input the Spirit's ABV, amount and how big your glass is.</p>
-		            <form onsubmit="return false">
-		            	<div class="calc">
-		            		<div>
-		            			<label for="abv">Spirit %<br>(ABV)</label><br>
-		            			<input type="text" id="abv" name="abv" value="">
-		            		</div>
-		            		<div>
-		            			<label for="qty">Spirit amount<br>(mls)</label><br>
-		            			<input type="text" id="qty" name="qty" value="">
-		            		</div>
-		            		<div>
-		            			<label for="glass">Glass size<br>(mls)</label><br>
-		            			<input type="text" id="glass" name="glass" value="">
-		            		</div>
-                            <div class="hydrospan">
-		            			<input onclick="Mixer()" type="submit" id="btn1" value="calculate">
-		            		</div>
-		            		<div class="span3">
-		            			<p id='output'></p>
-		            		</div>
-		            	</div>
-		            </form>
+                    <section>
+			            <h2>S.C.B.C&trade; Patented Super Duper Hydrometer 3000</h2>
+                        <p>Use this to calculate yer brews. Both calculators are rounded to 2 decimal places. A glossary for dummies is below.</p>
+                        <details>
+                            <summary>Glossary for Dummies</summary>
+                            <ul>
+                                <li>
+                                    Bricks<br><br>
+                                    Uses sucrose level to calculate ABV. Measured at a 1/100 scale, as in 1 gram of sucrose per 100 grams of alcohol solution.
+                                </li><br>
+                                <li>
+                                    Potential ABV%<br><br>
+                                    Uses sugar amount to determine potential alcohol amount when all sugar is used up during brewing process. Calculated via initial reading - finished reading, e.g 12% Pot. ABV brewed down to 1% Pot. ABV would net you a 11% ABV.
+                                </li><br>
+                                <li>
+                                    Specific Gravity<br><br>
+                                    Uses the density of distilled water to calculate ABV. Values below 1 mean higher alcohol content/less dissolved sugar, while values above 1 mean lower alcohol content/more dissolved sugar.
+                                </li>
+                            </ul>
+                        </details>
+                    </section>
+                    <section>
+                        <form onsubmit="return false"> <!-- <<-- This will stop it redirecting the page, but able to run the code-->
+			                <div class="calc">
+			                	<div>
+			                		<input type="radio" name="hydrometer_type" id="bricks" value="bricks"><br>
+			                		<label for="bricks">Bricks</label><br>
+			                	</div>
+			                	<div>
+			                		<input type="radio" name="hydrometer_type" id="percent" value="percent" checked><br>
+			                		<label for="percent">Potential ABV%</label><br>
+			                	</div>
+			                	<div>
+			                		<input type="radio" name="hydrometer_type" id="sg" value="sg"><br>
+			                		<label for="sg">Specific Gravity</label> 
+			                	</div>
+			                	<div class="hydrospan">
+			                		<input type="text" id="user_value" name="user_value" value="">
+			                		<input onclick="Hydrometer()" type="submit" id="btn1" value="calculate">
+			                	</div>
+			                	<div>
+			                		<p id='output1'></p>
+			                	</div>
+			                	<div>
+			                		<p id='output2'></p>
+			                	</div>
+			                	<div>
+			                		<p id='output3'></p>
+			                	</div>
+			                </div>
+		                </form>
+                    </section>
+                    <section>
+                        <h2>S.C.B.C&trade; Patented Super Duper Mixer Calculator 3001</h2>
+                        <p>For mixing mixers.<br><br>Shows the alcohol content of your mixer after adding spirits to it. Input the Spirit's ABV, amount and how big your glass is.</p>
+		                <form onsubmit="return false">
+		                	<div class="calc">
+		                		<div>
+		                			<label for="abv">Spirit %<br>(ABV)</label><br>
+		                			<input type="text" id="abv" name="abv" value="">
+		                		</div>
+		                		<div>
+		                			<label for="qty">Spirit amount<br>(mls)</label><br>
+		                			<input type="text" id="qty" name="qty" value="">
+		                		</div>
+		                		<div>
+		                			<label for="glass">Glass size<br>(mls)</label><br>
+		                			<input type="text" id="glass" name="glass" value="">
+		                		</div>
+                                <div class="hydrospan">
+		                			<input onclick="Mixer()" type="submit" id="btn1" value="calculate">
+		                		</div>
+		                		<div class="span3">
+		                			<p id='output'></p>
+		                		</div>
+		                	</div>
+		                </form>
+                    </section>
                     <figure>
                         <img src="../img/propaganda3.png" loading="lazy" alt="Image telling you to brew your own alcohol">
                         <figcaption>We here at S.C.B.C encourage you to help perpetuate the cycle of alcoholism.</figcaption>
