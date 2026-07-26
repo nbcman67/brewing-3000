@@ -40,7 +40,7 @@
 		    	}
 
                 if (isNaN(brix_output) || isNaN(percent_output) || isNaN(sg_output) || input_hydro_type === 0) {
-					document.getElementById("output1").innerHTML = 'Please enter valid numeric values';
+					document.getElementById("output2").innerHTML = 'Not a number, try again';
 					return;
 				}
 		    	/*  Display the results  */
@@ -67,14 +67,14 @@
 				const glassNum = parseFloat(glass);
 
 				if (isNaN(abvNum) || isNaN(qtyNum) || isNaN(glassNum) || glassNum === 0) {
-					document.getElementById("output").innerHTML = 'Please enter valid numeric values';
+					document.getElementById("output").innerHTML = 'Not a number, try again';
 					return;
 				}
 
 				const result = (abvNum * qtyNum) / glassNum;
 				const answer = result.toFixed(2);
 
-				document.getElementById("output").innerHTML = 'Your drink will be ' + answer + '%';
+				document.getElementById("output").innerHTML = 'Your drink will have a ' + answer + '% ABV.';
 
 			}
 	    </script>
@@ -94,27 +94,25 @@
                     </ul>
                 </nav>
                 <main>
+			        <h2>Hydrometer</h2> Calculations to change between Bricks, Spercific Gravity and Potential percentage. 
+			        select the value you have, enter your value and the results will display.
                     <form onsubmit="return false"> <!-- <<-- This will stop it redirecting the page, but able to run the code-->
-			            <div>
-			            	<div>
-			            		<h2>Hydrometer</h2> Calculations to change between Bricks, Spercific Gravity and Potential percentage. 
-			            		select the value you have, enter your value and the results will display.
-			            	</div>
+			            <div class="calc">
 			            	<div>
 			            		<input type="radio" name="hydrometer_type" id="bricks" value="bricks"><br>
 			            		<label for="bricks">Bricks</label><br>
 			            	</div>
 			            	<div>
 			            		<input type="radio" name="hydrometer_type" id="percent" value="percent" checked><br>
-			            		<label for="percent">(%) Potential Percentage</label><br>
+			            		<label for="percent">Potential ABV%</label><br>
 			            	</div>
 			            	<div>
 			            		<input type="radio" name="hydrometer_type" id="sg" value="sg"><br>
-			            		<label for="sg">(SG) Spercific Gravity</label> 
+			            		<label for="sg">Specific Gravity</label> 
 			            	</div>
-			            	<div>
+			            	<div class="hydrospan">
 			            		<input type="text" id="user_value" name="user_value" value="Enter Value">
-			            		<input  onclick="Hydrometer()" type="submit" id="btn1" value="calculate">
+			            		<input onclick="Hydrometer()" type="submit" id="btn1" value="calculate">
 			            	</div>
 			            	<div>
 			            		<p id='output1'></p>
@@ -130,28 +128,26 @@
 
 		            <!----   What Percentage is my Mixer   ---->
 		            <form onsubmit="return false"> <!-- <<-- This will stop it redirecting the page, but able to run the code-->
-		            	<div>
+                        <h2>What Percentage is my Mixer</h2> Calculations to show what percentage your drink will be after adding spirit.<br>
+		            	select the percentage spirit, amount added and the cup size.<br> Please not this will not be 100% correct but will give a batter Idea.
+		            	<div class="calc">
 		            		<div>
-		            			<h2>What Percentage is my Mixer</h2> Calculations to show what percentage your drink will be after adding spirit.<br>
-		            			select the percentage spirit, amount added and the cup size.<br> Please not this will not be 100% correct but will give a batter Idea.
-		            		</div>
-		            		<div>
-		            			<label for="abv">Spirit Percentage (ABV)</label><br>
+		            			<label for="abv">Spirit %<br>(ABV)</label><br>
 		            			<input type="text" id="abv" name="abv" value="Enter Value">
 		            		</div>
 		            		<div>
-		            			<label for="qty">Spirit ammount (mls)</label><br>
+		            			<label for="qty">Spirit amount<br>(mls)</label><br>
 		            			<input type="text" id="qty" name="qty" value="Enter Value">
 		            		</div>
 		            		<div>
-		            			<label for="glass">Drink / Glass size (mls)</label><br>
+		            			<label for="glass">Glass size<br>(mls)</label><br>
 		            			<input type="text" id="glass" name="glass" value="Enter Value">
 		            		</div>
-		            		<div>
-		            			<p id='output'> </p>
-		            		</div>
-		            		<div>
+                            <div class="hydrospan">
 		            			<input onclick="Mixer()" type="submit" id="btn1" value="calculate">
+		            		</div>
+		            		<div class="span3">
+		            			<p id='output'></p>
 		            		</div>
 		            	</div>
 		            </form>
