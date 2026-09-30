@@ -1,32 +1,30 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>S.C.B.C - RECIPES</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
-        <link rel="stylesheet" href="../css/styles.css">
+        <title>S.C.B.C - RECIPES</title> <!-- Page title -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Needed for responsive layout to function -->
+        <link rel="icon" type="image/x-icon" href="../img/favicon.ico"> <!-- Fancy icon -->
+        <link rel="stylesheet" href="../css/styles.css"> <!-- Linked to external CSS -->
     </head>
     <body>
-        <div id="wrapper">
-            <div id="main-container">
+        <div id="wrapper"> <!-- Restricts layout to 4:3 -->
+            <div id="main-container"> <!-- Controlled by Responsive layout -->
                 <div id="header">
-                    <img id="header-img" src="../img/scbc.png" loading="lazy" alt="Header for website">
+                    <img id="header-img" src="../img/scbc.png" loading="lazy" alt="Header for website"> <!-- Lazy loading for lazy efficiency -->
                 </div>
-                <nav>
+                <nav> <!-- Navbar for navigation -->
                     <ul>
                         <li><a href="../index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="calc.html">Calculators</a></li>
-                        <li><a href="recipe.html" id="active">Recipes</a></li>
+                        <li><a href="recipe.html" id="active">Recipes</a></li> <!-- Active id changes colour of button corresponding to current page -->
                     </ul>
                 </nav>
-                <main>
+                <main> <!-- Semantic tags improve SEO and readability for future use -->
                     <section>
                         <h2>Recipes</h2>
                         <p>All of our recipes that we provide to help you make your own alcohol.<br>Do note: Some of these measurements may be off because these recipes are mostly of American origin. We have converted measurements to Metric to the best of our ability.</p>
-                        <details>
-                            <summary>Contents</summary>
-                            <ul>
+                            <ul> <!-- List of recipes that the user can use -->
                                 <li><a href="#wine">Feijoa Wine</a></li><br>
                                 <li><a href="#brandy">Feijoa Brandy</a></li><br>
                                 <li><a href="#pie1">Apple Pie Moonshine</a></li><br>
@@ -35,8 +33,7 @@
                                 <li><a href="#rum1">Basic Rum Recipe</a></li><br>
                                 <li><a href="#rum2">Spiced Rum Recipe</a></li>
                             </ul>
-                        </details><br>
-                        <div id="articlesegment">
+                        <div id="articlesegment"> <!-- Article segment is compressed into one div with a separate scroll to save space -->
                             <article>
                                 <h2 id="wine">Feijoa Wine</h2>
                                 <p>Make sure to use ripe fruit, throw any blemished ones away.<br>
@@ -199,7 +196,7 @@
                         </div>
                     </section>
                 </main>
-                <footer>
+                <footer> <!-- Footer with fake copyright info -->
                     <p>&copy;2026 Supreme Craft Brewing Co. Ltd, All rights reserved.</p>
                 </footer>
             </div>

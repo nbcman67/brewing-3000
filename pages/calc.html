@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>S.C.B.C - CALCULATORS</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
-        <link rel="stylesheet" href="../css/styles.css">
-        <script>
+        <title>S.C.B.C - CALCULATORS</title> <!-- Page title -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Needed for responsive layout to function -->
+        <link rel="icon" type="image/x-icon" href="../img/favicon.ico"> <!-- Fancy icon -->
+        <link rel="stylesheet" href="../css/styles.css"> <!-- Linked to external CSS -->
+		<!-- Javascript section below -->
+        <script> 
 		    /* Function for converting the Hydrometer values */
 		    function Hydrometer()
 		    {
@@ -80,24 +81,24 @@
 	    </script>
     </head>
     <body>
-        <div id="wrapper">
-            <div id="main-container">
+        <div id="wrapper"> <!-- Restricts layout to 4:3 -->
+            <div id="main-container"> <!-- Controlled by Responsive layout -->
                 <div id="header">
-                    <img id="header-img" src="../img/scbc.png" loading="lazy" alt="Header for website">
+                    <img id="header-img" src="../img/scbc.png" loading="lazy" alt="Header for website"> <!-- Lazy loading for lazy efficiency -->
                 </div>
-                <nav>
+                <nav> <!-- Navbar for navigation -->
                     <ul>
                         <li><a href="../index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
-                        <li><a href="calc.html" id="active">Calculators</a></li>
+                        <li><a href="calc.html" id="active">Calculators</a></li> <!-- Active id changes colour of button corresponding to current page -->
                         <li><a href="recipe.html">Recipes</a></li>
                     </ul>
                 </nav>
-                <main>
+                <main> <!-- Semantic tags improve SEO and readability for future use -->
                     <section>
 			            <h2>S.C.B.C&trade; Patented Super Duper Hydrometer 3000</h2>
                         <p>Use this to calculate yer brews. Both calculators are rounded to 2 decimal places. A glossary for dummies is below.</p>
-                        <details>
+                        <details> <!-- A glossary for dummies, collapsible list -->
                             <summary>Glossary for Dummies</summary>
                             <ul>
                                 <li>
@@ -115,8 +116,8 @@
                             </ul>
                         </details>
                     </section>
-                    <section>
-                        <form onsubmit="return false"> <!-- <<-- This will stop it redirecting the page, but able to run the code-->
+                    <section> <!-- Actual calculator section, uses javascript from above -->
+                        <form onsubmit="return false"> <!-- This will stop it redirecting the page, but able to run the code-->
 			                <div class="calc">
 			                	<div>
 			                		<input type="radio" name="hydrometer_type" id="bricks" value="bricks"><br>
@@ -146,7 +147,7 @@
 			                </div>
 		                </form>
                     </section>
-                    <section>
+                    <section> <!-- Same as section above -->
                         <h2>S.C.B.C&trade; Patented Super Duper Mixer Calculator 3001</h2>
                         <p>For mixing mixers.<br><br>Shows the alcohol content of your mixer after adding spirits to it. Input the Spirit's ABV, amount and how big your glass is.</p>
 		                <form onsubmit="return false">
@@ -172,12 +173,12 @@
 		                	</div>
 		                </form>
                     </section>
-                    <figure>
+                    <figure> <!-- Image combo tag for use with captions -->
                         <img src="../img/propaganda3.png" loading="lazy" alt="Image telling you to brew your own alcohol">
                         <figcaption>We here at S.C.B.C encourage you to help perpetuate the cycle of alcoholism.</figcaption>
                     </figure>
                 </main>
-                <footer>
+                <footer> <!-- Footer with fake copyright info -->
                     <p>&copy;2026 Supreme Craft Brewing Co. Ltd, All rights reserved.</p>
                 </footer>
             </div>
